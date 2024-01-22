@@ -43,20 +43,22 @@ function writeToFile(fileName, data) {
         }).catch((err)=>console.log(err));
     }).catch(err =>{
         console.log(err);
-    });
+    }); 
 }
 
 function buildDescription(data){
-    return `## Description
-    ${data.description}
-    ### Installation Instructions
-    ${data.installation}
-    ### Usage Information
+    return `
+## Description  
+    ${data.description}  
+## Installation Instructions  
+    ${data.installation}  
+## Usage Information  
     ${data.usage}
-    ### Contribution
+## Contribution
     ${data.contribution}
-    ### Test Instructions
-    ${data.test}`
+## Test Instructions
+    ${data.test}
+`
 }
 
 
