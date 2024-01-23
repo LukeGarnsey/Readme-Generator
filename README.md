@@ -1,18 +1,19 @@
-# My project
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+# 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ## Description  
-    description  
+      
 ## Installation Instructions  
-    install  
+      
 ## Usage Information  
-    use
+    
 ## Contribution
-    contribute
+    
 ## Test Instructions
-    test
+    
 
 ## Questions
 Repo owner: [LukeGarnsey](https://github.com/LukeGarnsey)
 Email: lukegarnsey@gmail.com
-    ## License
+    
+## License
 Licensed under the [undefined]((undefined)) license.
