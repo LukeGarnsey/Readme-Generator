@@ -1,8 +1,10 @@
 // TODO: Include packages needed for this application
 const inquire = require('inquirer');
 const fs = require('fs/promises');
-const licenses = require("./licenses");
+const {licenses} = require("./utils/licenses");
+const {renderLicenseBadge} = require("./utils/generateMarkdown");
 const desc = require("./desc");
+console.log(renderLicenseBadge);
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -34,7 +36,7 @@ const questions = [
         type:'list',
         name:'license',
         message:'What License would you like to use?',
-        choices: licenses.licenses
+        choices: Object.keys(licenses)
     },
     {
         type:'input',
@@ -51,9 +53,13 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, `# ${data.title}`).then(()=>{
-        fs.appendFile(fileName, desc.buildDescription(data)).then(()=>{
+        fs.appendFile(fileName, renderLicenseBadge(data.license)).then(()=>{
+            fs.appendFile(fileName, buildDescription(data)).then(()=>{
+            
+            }).catch((err)=>console.log(err));
+        }).catch(err=>{
 
-        }).catch((err)=>console.log(err));
+        });
     }).catch(err =>{
         console.log(err);
     }); 
