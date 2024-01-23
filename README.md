@@ -1,14 +1,12 @@
 # Readme Generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description  
-    Project to auto generate your own readme file in a question.  
+    Project to auto generate your own readme file through question and responses
 ## Installation Instructions  
-    clone repo, run 'npm init', then run 'node index'  
+    clone repo, run 'npm init'
 ## Usage Information  
-    Use to make Readme
-## Contribution
-    
-## Test Instructions
+    then run 'node index'. 
+    Follow the instructions to get a README.MD file
     
 
 ## Questions
