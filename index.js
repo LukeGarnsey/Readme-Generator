@@ -2,9 +2,8 @@
 const inquire = require('inquirer');
 const fs = require('fs/promises');
 const {licenses} = require("./utils/licenses");
-const {renderLicenseBadge} = require("./utils/generateMarkdown");
+const {renderLicenseBadge, generateMarkdown} = require("./utils/generateMarkdown");
 const desc = require("./desc");
-console.log(renderLicenseBadge);
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -55,14 +54,21 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, `# ${data.title}`).then(()=>{
         fs.appendFile(fileName, renderLicenseBadge(data.license)).then(()=>{
             fs.appendFile(fileName, buildDescription(data)).then(()=>{
-            
+                fs.appendFile(fileName, buildQuestions(data)).then(()=>{
+                    fs.appendFile(fileName, `${generateMarkdown(data.license)}`).then(()=>{
+                        
+                    }).catch(err=>console.log(err));
+                }).catch(err=>console.log(err));
             }).catch((err)=>console.log(err));
-        }).catch(err=>{
-
-        });
-    }).catch(err =>{
-        console.log(err);
-    }); 
+        }).catch(err=>console.log(err));
+    }).catch(err =>console.log(err)); 
+}
+function buildQuestions(data){
+    return `
+## Questions
+Repo owner: [${data.github}](https://github.com/${data.github})
+Email: ${data.email}
+    `;
 }
 
 function buildDescription(data){
