@@ -12,7 +12,7 @@ function renderLicenseLink(license) {
   if(license==="")
     return "";
 
-  return `(${license.link})`;
+  return `(${licenses[license].link})`;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -21,7 +21,7 @@ function renderLicenseSection(data) {
   if(data === "None")
     return "";
   
-  return `Licensed under the [${data.license}](${renderLicenseLink(data.link)}) license.`
+  return `Licensed under the [${data}](${renderLicenseLink(data)}) license.`
 }
 
 // TODO: Create a function to generate markdown for README

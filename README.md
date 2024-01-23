@@ -1,11 +1,11 @@
-# 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# Readme Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description  
-      
+    Project to auto generate your own readme file in a question.  
 ## Installation Instructions  
-      
+    clone repo, run 'npm init', then run 'node index'  
 ## Usage Information  
-    
+    Use to make Readme
 ## Contribution
     
 ## Test Instructions
@@ -16,4 +16,4 @@ Repo owner: [LukeGarnsey](https://github.com/LukeGarnsey)
 Email: lukegarnsey@gmail.com
     
 ## License
-Licensed under the [undefined]((undefined)) license.
+Licensed under the [MIT](((https://opensource.org/licenses/MIT))) license.

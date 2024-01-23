@@ -55,7 +55,7 @@ function writeToFile(fileName, data) {
         fs.appendFile(fileName, renderLicenseBadge(data.license)).then(()=>{
             fs.appendFile(fileName, buildDescription(data)).then(()=>{
                 fs.appendFile(fileName, buildQuestions(data)).then(()=>{
-                    fs.appendFile(fileName, `${generateMarkdown(data.license)}`).then(()=>{
+                    fs.appendFile(fileName, generateMarkdown(data.license)).then(()=>{
                         
                     }).catch(err=>console.log(err));
                 }).catch(err=>console.log(err));
