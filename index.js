@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquire = require('inquirer');
 const fs = require('fs/promises');
+const licenses = require("./licenses");
+const desc = require("./desc");
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -28,17 +30,28 @@ const questions = [
         type:'input',
         name:'test',
         message:'Enter Test Instructions'
+    },{
+        type:'list',
+        name:'license',
+        message:'What License would you like to use?',
+        choices: licenses.licenses
+    },
+    {
+        type:'input',
+        name:'github',
+        message:'Enter Github username'
+    },
+    {
+        type:'input',
+        name:'email',
+        message:'Enter Email Address'
     }
 ];
 
-inquire.prompt(questions).then((answers)=>{
-    console.log(answers);
-    writeToFile("README.md", answers);
-});
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, `# ${data.title}`).then(()=>{
-        fs.appendFile(fileName, buildDescription(data)).then(()=>{
+        fs.appendFile(fileName, desc.buildDescription(data)).then(()=>{
 
         }).catch((err)=>console.log(err));
     }).catch(err =>{
@@ -63,7 +76,12 @@ function buildDescription(data){
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquire.prompt(questions).then((answers)=>{
+        console.log(answers);
+        writeToFile("README.md", answers);
+    });
+}
 
 // Function call to initialize app
 init();
